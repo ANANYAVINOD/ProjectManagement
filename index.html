@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container flex-box">
+            <img>
+            <div class="sec-right flex-box">
+                <span class="name-display">Welcome, User</span>
+                <button id="logout-btn" type="submit" value="Logout">Logout</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <button id="newBtn">+ New</button>    
+            <div class="tab flex-box" id="tab">
+                <ul class="menu-bar flex-box" id="menu">
+                    <li><a href="index.html">Details</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                </ul>
+                <button class="editBtn" type="submit">Edit</button>
+            </div>
+
+            <div class="content flex-box" id="content">
+                <div class="project-bar flex-box">
+                    <ul class="project-list">
+                        <li class="flex-box"><a href="">Project 1</a></li>
+                        <li><a href="">Project 2</a></li>
+                        <li><a href="">Project 3</a></li>
+                    </ul>
+                </div>
+                <div class="project-details">
+                    <div class="project-inner">
+                        <div class="left-sec">
+                            <h2>Project name</h2>
+                            <span class="currentProject" id="clientName">Customer/Client</span><br>
+                            <span class="currentProject" id="proManager">Project Manager</span><br>
+                            <span class="currentProject" id="proStatus">Project Status</span><br>
+                        </div>
+                        <div class="right-sec">
+
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <label for="technologies">Technology used:</label>
+                        <input type="text" name="technologies" id="technology">
+                    </div>
+                    <div class="project-description">
+                        <label for="description">Description:</label>
+                        <input type="text" name="description" id="description">
+
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>Copyright</footer>
+</body>
+</html>
