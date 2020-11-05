@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Management</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="icon" href="./images/logo.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
         <div class="container flex-box">
-            <img>
+            <div class="sec-left flex-box">
+                <img src="./images/logo.png" alt="logo">
+                <h1>Project Management System</h1>
+            </div>
             <div class="sec-right flex-box">
                 <span class="name-display">Welcome, User</span>
                 <button id="logout-btn" type="submit" value="Logout">Logout</button>
@@ -20,52 +26,128 @@
     </header>
     <main>
         <div class="main-container">
-            <button id="newBtn">+ New</button>    
+            <button type="button" id="newBtn">+ New</button>    
+
+            <!-- The Modal -->
+            <div id="forms-modal" class="modal">
+
+                <!-- PROJECT FORMS -->
+                <div class="modal-content" id="modal-content-project">
+                    <span class="modal-header">
+                        <h3 id='project-form-title'>Add Project</h3> 
+                    </span>
+                    <form class="modal-body" id="project-form">
+
+                        <div class="form-feild">
+                            <label for="project-name"> Project Name </label><br>
+                            <input type="text" name="project-name" id="project-name" class="form-input" maxlength="200" autocomplete="off">
+                            <span id="pname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="client-name"> Client Name </label><br>
+                            <input type="text" name="client-name" id="client-name" class="form-input" maxlength="200" autocomplete="off">
+                            <span id="cname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="project-manager"> Project Manager </label><br>
+                            <input type="text" name="project-manager" id="project-manager" class="form-input" autocomplete="off">
+                            <span id="pmname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="start-date">Start Date</label><br>
+                            <input type="date" name="start-date" id="start-date" class="form-input">
+                            <span id="start-date-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="end-date">End Date</label><br>
+                            <input type="date" name="end-date" id="end-date" class="form-input">
+                            <span id="end-date-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="status">Progress level</label><br>
+                            <input type="number" name="status" id="status" class="form-input">
+                            <span id="status-error" class="error-msg"></span>
+                        </div>
+                
+                        <div class="form-feild">
+                            <label for="technologies">Technologies</label><br>
+                            <input type="text" name="technologies" id="technologies" class="form-input">
+                            <span id="technologies-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="description">Project Description</label><br>
+                            <textarea name="description" id="pro-description" class="form-input" rows="6" maxlength="300"></textarea>
+                            <span id="description-error" class="error-msg"></span>
+                        </div>
+
+                        <label for="buttons" class="pro-btn">
+                            <input type="button" value="Cancel" class="cancel-project" id="cancel">
+                            <input type="submit" value="Add Project" class="add-project" id="submit-project-button">
+                        </label>
+                    </form>
+                </div>
+            </div>
+            
             <div class="tab flex-box" id="tab">
                 <ul class="menu-bar flex-box" id="menu">
                     <li><a href="index.html">Details</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="invoice.html">Invoice</a></li>
                 </ul>
-                <button class="editBtn" type="submit">Edit</button>
+                <button class="editBtn" type="submit">Edit <i class="fa fa-pencil editPencil"></i> </button>
             </div>
 
             <div class="content flex-box" id="content">
                 <div class="project-bar flex-box">
-                    <ul class="project-list">
-                        <li class="flex-box"><a href="">Project 1</a></li>
-                        <li><a href="">Project 2</a></li>
-                        <li><a href="">Project 3</a></li>
+                    <ul class="project-list" id="prolists">
+                        <h4>Recent Projects</h4>
                     </ul>
                 </div>
                 <div class="project-details">
-                    <div class="project-inner">
+                    <div class="project-inner flex-box">
                         <div class="left-sec">
-                            <h2>Project name</h2>
+                            <h2 id="pName">Project name</h2>
+                            <span class="currentProject" >Client name:</span>
                             <span class="currentProject" id="clientName">Customer/Client</span><br>
+                            <span class="currentProject" >Project Manager:</span>
                             <span class="currentProject" id="proManager">Project Manager</span><br>
+                            <span class="currentProject" >Project Status:</span>
                             <span class="currentProject" id="proStatus">Project Status</span><br>
                         </div>
                         <div class="right-sec">
-
+                            
+                            <div class="progress" id="progress">
+                                <svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+	                                <circle class="progress-circle-back" cx="80" cy="80" r="74"></circle>
+                                    <circle class="progress-circle-prog" cx="80" cy="80" r="74"></circle>
+                                </svg>
+	                            <div class="progress-text" id="progressStatus" data-progress="0">status</div>
+                            </div>	
                         </div>
                     </div>
+                    
                     <div class="project-tech">
                         <label for="technologies">Technology used:</label>
-                        <input type="text" name="technologies" id="technology">
+                        <span class="currentProject" id="technology">Technology
+                            <ul class="tag-list"></ul>
+                        </span><br>
                     </div>
                     <div class="project-description">
                         <label for="description">Description:</label>
-                        <input type="text" name="description" id="description">
-
-                    </div>
-                    
-
-                </div>
+                        <span class="currentProject" id="description">Description</span><br>
+                    </div>                
             </div>
         </div>
 
     </main>
     <footer>Copyright</footer>
+    <script src="./scripts/formValidation.js"></script>
+    <script src="./scripts/addProject.js"></script>
 </body>
 </html>
