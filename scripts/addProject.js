@@ -58,7 +58,7 @@ const list = document.getElementById('prolists');
 const listItem = document.createElement('li');
 proList.forEach(element => {
     const listItem = document.createElement('li');
-    listItem.innerHTML = element.projectname;  
+    listItem.innerHTML = element.projectname; 
     list.appendChild(listItem); 
     listItem.addEventListener("click", function(e){
         e.preventDefault();
@@ -79,7 +79,7 @@ proList.forEach(element => {
     document.getElementById("edit-project-button").addEventListener("click" , function(e) {
         e.preventDefault();
         document.getElementById("forms-modal").style.display = "none";
-        for (var i = 0; i < proList.length; i++) {
+        for (let i = 0; i < proList.length; i++) {
             if(prName.value === proList[i].projectname) {
                 proList[i].projectname = prName.value;
                 proList[i].clientname = prClient.value;
@@ -117,8 +117,9 @@ function progressBar(progressVal,totalPercentageVal = 100) {
     var strokeVal = (4.64 * 100) /  totalPercentageVal;
 	var x = document.querySelector('.progress-circle-prog');
     x.style.strokeDasharray = progressVal * (strokeVal) + ' 999';
-	$('.progress-text').data('progress', progressVal);
+	//$('.progress-text').data('progress', progressVal);
 }
+
 
 function getDays(date1 , date2) {
     let dateone = new Date(date1); 

@@ -27,6 +27,8 @@
 
 h1 {
   margin-left: 10px;
+  font-size: 25px;
+    line-height: 1;
 }
 #logout-btn {
     padding: 10px;
@@ -142,7 +144,6 @@ h4 {
 .project-details {
     background-color: #ffffff;
     width: 75%;
-   
 }
 
 #content {
@@ -156,11 +157,16 @@ h2 {
     font-weight: bold;
 }
 
+#pName {
+  margin-left: 18px;
+  font-size: 18px;
+}
+
 .project-inner {
     border: 1px solid #CDD0D6 ;
     margin: 10px 15px;
     border-radius: 5px;
-    padding: 30px 20px;
+    padding: 20px 20px;
 }
 
 .currentProject {
@@ -179,6 +185,7 @@ h2 {
   margin: 25px 15px;
   border-radius: 5px;
   padding: 10px;
+  padding-left: 40px;
 }
 
 .project-tech input[type = "text"] {
@@ -190,6 +197,7 @@ h2 {
   margin: 35px 15px;
   border-radius: 5px;
   padding: 10px;
+  padding-left: 40px;
 }
 
 .project-description input[type = "text"] {
