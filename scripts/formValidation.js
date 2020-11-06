@@ -6,7 +6,7 @@ document.getElementById("cancel").addEventListener("click" , function() {
     document.getElementById("forms-modal").style.display = "none";
     location.reload();
 });
-
+document.getElementById("edit-project-button").style.display = "none";
 document.getElementById("submit-project-button").addEventListener("click" , function(event) {
     event.preventDefault();
     validateData();
@@ -33,12 +33,11 @@ function validateData() {
            enddate: endDate,
            technology: tech,
            description: descrptn,
-           status: status
+           status: status,
         };
         projectJson.push(projectlist);
         let projectDetails = JSON.stringify(projectJson);
         localStorage.setItem("projects", projectDetails);
-        console.log("Project added");
         location.reload();
     }
 }
@@ -162,3 +161,4 @@ function validateStatus() {
     } 
     return updateErrorMessage(proStatus, errorMessage, errorMessageContent);
 }
+

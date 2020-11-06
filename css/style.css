@@ -5,7 +5,7 @@
     color: #000;
     background-color: #F7F7F7;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .flex-box {
@@ -47,7 +47,7 @@ h1 {
 .................................................*/
 main {
     background-color: #E5E5E5;
-    padding: 20px 30px 20px 30px; 
+    padding: 10px 30px 10px 30px; 
 }
 
 #newBtn {
@@ -64,11 +64,21 @@ main {
     margin-bottom: 0;
 }
 
+#active {
+  background-color:  #FF5E00 ;
+  color: #ffffff;
+}
+
 .menu-bar li a {
     color: #7A7A7B;
     padding: 15px 20px 15px 20px;
     background-color: #ffffff;
     border-radius: 15px 15px 0 0;
+}
+
+.menu-bar li a:hover {
+  background-color:  #FF5E00 ;
+  color: #ffffff;
 }
 
 .editBtn {
@@ -79,10 +89,16 @@ main {
     margin-top: -8px;
 }
 
+.editBtn:hover {
+  background-color:  #FF5E00 ;
+  color: #ffffff;
+}
+
 .project-bar {
     padding: 25px 0 25px 10px;
     background-color: #CDD0D6;
     height: 500px;
+    width: 25%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -102,6 +118,10 @@ main {
     background-color: #ffffff;
     margin-bottom: 30px;
     justify-content: space-between;  
+}
+
+.project-list li:hover {
+  cursor: pointer;
 }
 
 .project-list li:hover {
@@ -195,7 +215,7 @@ h2 {
 
 .progress-circle {
 transform: rotate(-90deg);
-margin-top: -40px;
+margin-top: -30px;
 }
 
 .progress-circle-back {
@@ -220,7 +240,6 @@ top: 60px;
 text-align: center;
 font-size: 2em;
 }
-
 
 /*................................................
     NEW PROJECT MODAL
@@ -275,6 +294,9 @@ font-size: 2em;
   padding: 20px 20px 20px 20px; 
   background-color: #CDD0D6;
   color: #000;
+  height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .form-feild {
@@ -301,7 +323,13 @@ font-size: 2em;
 .add-project {
   padding: 15px 40px;
   color: #ffffff;
-  background-color: #000;
+  background-color:  #FF5E00;
+}
+
+.edit-project {
+  padding: 15px 30px;
+  color: #ffffff;
+  background-color:  #FF5E00 ;
 }
 
 .error-msg {
@@ -310,7 +338,7 @@ font-size: 2em;
 /*................................................
     FOOTER SECTION
 .................................................*/
-footer {
+.footer {
     background-color:#FF5E00;
     color: #ffffff;
     align-items: center;

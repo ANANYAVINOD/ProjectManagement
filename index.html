@@ -19,8 +19,8 @@
                 <h1>Project Management System</h1>
             </div>
             <div class="sec-right flex-box">
-                <span class="name-display">Welcome, User</span>
-                <button id="logout-btn" type="submit" value="Logout">Logout</button>
+                <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
+                <button id="logout-btn" type="submit" value="Logout">Logout <i class="fa fa-sign-out"></i></button>
             </div>
         </div>
     </header>
@@ -89,6 +89,7 @@
                         <label for="buttons" class="pro-btn">
                             <input type="button" value="Cancel" class="cancel-project" id="cancel">
                             <input type="submit" value="Add Project" class="add-project" id="submit-project-button">
+                            <input type="submit" value="Save Updates" class="edit-project" id="edit-project-button">
                         </label>
                     </form>
                 </div>
@@ -96,38 +97,44 @@
             
             <div class="tab flex-box" id="tab">
                 <ul class="menu-bar flex-box" id="menu">
-                    <li><a href="index.html">Details</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
+                    <li class="menu"><a id="active" href="index.html">Details</a></li>
+                    <li class="menu"><a href="resources.html">Resources</a></li>
+                    <li class="menu"><a href="invoice.html">Invoice</a></li>
                 </ul>
-                <button class="editBtn" type="submit">Edit <i class="fa fa-pencil editPencil"></i> </button>
+                <button class="editBtn" id="edit" type="submit">Edit <i class="fa fa-pencil editPencil"></i> </button>
             </div>
 
             <div class="content flex-box" id="content">
                 <div class="project-bar flex-box">
+                <div class="pro-flex"><h2>Recent Projects</h2>
                     <ul class="project-list" id="prolists">
-                        <h4>Recent Projects</h4>
-                    </ul>
+                    </ul></div> 
                 </div>
                 <div class="project-details">
                     <div class="project-inner flex-box">
                         <div class="left-sec">
-                            <h2 id="pName">Project name</h2>
+                            <h2 id="pName"></h2>
                             <span class="currentProject" >Client name:</span>
-                            <span class="currentProject" id="clientName">Customer/Client</span><br>
+                            <span class="currentProject" id="clientName"></span><br>
                             <span class="currentProject" >Project Manager:</span>
-                            <span class="currentProject" id="proManager">Project Manager</span><br>
+                            <span class="currentProject" id="proManager"></span><br>
                             <span class="currentProject" >Project Status:</span>
-                            <span class="currentProject" id="proStatus">Project Status</span><br>
+                            <span class="currentProject" id="proStatus"></span><br>
+                            <span class="currentProject" >Start Date:</span>
+                            <span class="currentProject" id="proSdate"></span><br>
+                            <span class="currentProject" >End Date:</span>
+                            <span class="currentProject" id="proEdate"></span><br>
+                            <span class="currentProject" >Duration: </span>
+                            <span class="currentProject" id="day"></span>
                         </div>
                         <div class="right-sec">
                             
                             <div class="progress" id="progress">
-                                <svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="progress-circle" width="180px" height="180px" xmlns="http://www.w3.org/2000/svg">
 	                                <circle class="progress-circle-back" cx="80" cy="80" r="74"></circle>
                                     <circle class="progress-circle-prog" cx="80" cy="80" r="74"></circle>
                                 </svg>
-	                            <div class="progress-text" id="progressStatus" data-progress="0">status</div>
+	                            <div class="progress-text" id="progressStatus" data-progress="0"></div>
                             </div>	
                         </div>
                     </div>
@@ -146,8 +153,9 @@
         </div>
 
     </main>
-    <footer>Copyright</footer>
+    <footer class="footer">Copyright</footer>
     <script src="./scripts/formValidation.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
     <script src="./scripts/addProject.js"></script>
 </body>
 </html>
