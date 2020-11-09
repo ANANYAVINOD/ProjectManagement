@@ -4,8 +4,11 @@ window.addEventListener('load', function() {
     let num = lis.length; 
     for(let i = num-1; i >= 0; i--) {  
         let c = list.removeChild(lis[i]);    
-        list.appendChild(c);                 
+        list.appendChild(c);                
     }
+
+    document.getElementById("project-detail").style.display = "block";
+    document.getElementById("project-resourc").style.display = "none";
 })
  
 //variables for project details area
@@ -92,8 +95,8 @@ proList.forEach(element => {
                 break;
             } 
         }
-         localStorage.setItem("projects", JSON.stringify(proList));
-         location.reload();
+        localStorage.setItem("projects", JSON.stringify(proList));
+        location.reload();
     })
 });
 
@@ -109,18 +112,17 @@ prostatus.innerHTML = selectedProject.status + "%";
 tech.innerHTML =  selectedProject.technology;
 desptn.innerHTML = selectedProject.description;
 document.getElementById("progressStatus").innerHTML = selectedProject.status + "%";
-progressBar(selectedProject.status,100);
+progressBar(selectedProject.status);
 
  
 //function for progress circle  
-function progressBar(progressVal,totalPercentageVal = 100) {
-    var strokeVal = (4.64 * 100) /  totalPercentageVal;
-	var x = document.querySelector('.progress-circle-prog');
-    x.style.strokeDasharray = progressVal * (strokeVal) + ' 999';
-	//$('.progress-text').data('progress', progressVal);
+function progressBar(progressVal) {
+    let strokeVal = 4.65 ;
+	let x = document.querySelector('.progress-circle-prog');
+    x.style.strokeDasharray = progressVal * (strokeVal)  + ' 999';
 }
 
-
+//function to get duration
 function getDays(date1 , date2) {
     let dateone = new Date(date1); 
     let datetwo = new Date(date2); 

@@ -159,6 +159,9 @@ function validateStatus() {
     if (proStatus === '') {
         errorMessageContent = requiredFieldMessage;
     } 
+    else if(proStatus > 100) {
+        errorMessageContent = "* Status can't be greater than 100";
+    }
     return updateErrorMessage(proStatus, errorMessage, errorMessageContent);
 }
 

@@ -1,6 +1,10 @@
 /*................................................
     HEADER SECTION
 .................................................*/
+html {
+  margin: 0 auto;
+    overflow-x: hidden;
+}
 .container {
     color: #000;
     background-color: #F7F7F7;
@@ -50,6 +54,7 @@ h1 {
 main {
     background-color: #E5E5E5;
     padding: 10px 30px 10px 30px; 
+    margin: 0 auto;
 }
 
 #newBtn {
@@ -69,6 +74,10 @@ main {
 #active {
   background-color:  #FF5E00 ;
   color: #ffffff;
+}
+
+.menu {
+  cursor: pointer;
 }
 
 .menu-bar li a {
@@ -343,6 +352,46 @@ font-size: 2em;
 .error-msg {
   color: #ff0000;
 }
+
+/*................................................
+    RESOURCE SECTION
+.................................................*/
+
+.project-resource {
+    background-color: #ffffff;
+    width: 75%;
+}
+
+#resource-add  {
+    font-size: 30px;
+    color: #FF5E00;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#resource-add:hover {
+  box-shadow: 3px 3px 3px 3px #ccc;
+}
+
+.res-inner{
+  border: 1px solid #CDD0D6;
+  margin: 10px 15px;
+  border-radius: 5px;
+  padding: 5px 2px;
+}
+
+.tables{
+  width: 110%;
+}
+
+.tables th {
+  font-size: 16px;
+  padding: 0 70px;
+  border: 0 ;
+  margin: 0 auto;
+}
+
+
 /*................................................
     FOOTER SECTION
 .................................................*/
@@ -352,4 +401,12 @@ font-size: 2em;
     align-items: center;
     padding: 30px;
     text-align: center;
+}
+
+@media (max-width:990px) {
+  .tables th {
+    font-size: 14px;
+    padding: 0 20px;
+    
+  }
 }

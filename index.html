@@ -97,9 +97,9 @@
             
             <div class="tab flex-box" id="tab">
                 <ul class="menu-bar flex-box" id="menu">
-                    <li class="menu"><a id="active" href="index.html">Details</a></li>
-                    <li class="menu"><a href="resources.html">Resources</a></li>
-                    <li class="menu"><a href="invoice.html">Invoice</a></li>
+                    <li class="menu" id="details"><a id="active" >Details</a></li>
+                    <li class="menu" id="resources"><a>Resources</a></li>
+                    <li class="menu" id="invoice"><a>Invoice</a></li>
                 </ul>
                 <button class="editBtn" id="edit" type="submit">Edit <i class="fa fa-pencil editPencil"></i> </button>
             </div>
@@ -110,7 +110,7 @@
                     <ul class="project-list" id="prolists">
                     </ul></div> 
                 </div>
-                <div class="project-details">
+                <div class="project-details" id="project-detail">
                     <div class="project-inner flex-box">
                         <div class="left-sec">
                             <h2 id="pName"></h2>
@@ -147,13 +147,35 @@
                         <label for="description"><b>Description:</b></label>
                         <span class="currentProject" id="description">Description</span><br>
                     </div>                
+                </div>
+                <div class="project-resource" id="project-resourc">
+                    <i class="fa fa-plus-circle" id="resource-add"></i>
+                    <div class="res-inner">
+                        <table class="tables">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Billable</th>
+                                    <th>Rate/ hour</th>
+                                    <th class="remove-background"></th>
+                                  </tr>
+                            </thead>
+                            <!-- Resource table content -->
+                            <tbody id="resource-table--body">           
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
 
-    </main>
+        </main>
     <footer class="footer">Copyright</footer>
+    <script src="./scripts/dashboard.js"></script>
     <script src="./scripts/formValidation.js"></script>
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
     <script src="./scripts/addProject.js"></script>
+    
 </body>
 </html>
