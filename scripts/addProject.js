@@ -9,7 +9,9 @@ window.addEventListener('load', function() {
 
     document.getElementById("project-detail").style.display = "block";
     document.getElementById("project-resourc").style.display = "none";
+    document.getElementById("project-invoice").style.display = "none";
     createTable();
+    invoiceTable();
 })
  
 //variables for project details area

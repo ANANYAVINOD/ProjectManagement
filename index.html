@@ -200,7 +200,18 @@
                             <tbody id="resource-table--body"></tbody>
                         </table>
                     </div>
-                    
+                </div>
+
+                <div class="project-invoice" id="project-invoice">
+                    <div class="invoice-top">
+                        <span class="gen-text">Number of working days:</span>
+                        <input type="number" id="invoiceDays">
+                        <button type="button" id="generateBtn" value="generate">Generate Invoice</button>
+                    </div>
+                    <table class="tables" id="invoice-table">
+                        <tbody id="invoice-table--body"></tbody>
+                    </table>
+                    <div class="total" id="total">Total Amount</div>
                 </div>
             </div>
 
@@ -209,6 +220,7 @@
     <script src="./scripts/dashboard.js"></script>
     <script src="./scripts/formValidation.js"></script>
     <script src="./scripts/addProject.js"></script>
+    <script src="./scripts/invoice.js"></script>
     
 </body>
 </html>

@@ -1,11 +1,19 @@
 document.getElementById("details").addEventListener("click" , function() {
     document.getElementById("project-detail").style.display = "block";
     document.getElementById("project-resourc").style.display = "none";
+    document.getElementById("project-invoice").style.display = "none";
 });
 
 document.getElementById("resources").addEventListener("click" , function() {
     document.getElementById("project-detail").style.display = "none";
     document.getElementById("project-resourc").style.display = "block";
+    document.getElementById("project-invoice").style.display = "none";
+});
+
+document.getElementById("invoice").addEventListener("click" , function() {
+    document.getElementById("project-detail").style.display = "none";
+    document.getElementById("project-resourc").style.display = "none";
+    document.getElementById("project-invoice").style.display = "block";
 });
 
 document.getElementById("resource-add").addEventListener("click" , function() {
@@ -30,10 +38,10 @@ document.getElementById("submit-res-button").addEventListener("click" , function
     e.preventDefault();
     resValidation() ;
     //createTable();
-    //addRow();
     document.getElementById("modal-content-resource").style.display = "none";
     document.getElementById("res-inner").style.display = "block";
-    });
+    location.reload();
+});
 
      
 function resValidation() {
@@ -90,7 +98,7 @@ function createTable() {
         headerRow.appendChild(header);
     });
     table.appendChild(headerRow);
-    addTable.appendChild(table);       
+    addTable.appendChild(table);  
 
     resList.forEach(element => {
         if(element.Project == selectProject.name) {
@@ -161,7 +169,7 @@ function createTable() {
                 localStorage.setItem("resources", JSON.stringify(resList));
             });
 
-            })
+        })
         } 
     }); 
     addTable.appendChild(table);

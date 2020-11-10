@@ -357,7 +357,8 @@ font-size: 2em;
     RESOURCE SECTION
 .................................................*/
 
-.project-resource {
+.project-resource ,
+.project-invoice {
     background-color: #ffffff;
     width: 75%;
 }
@@ -442,7 +443,7 @@ font-size: 2em;
 }
 
 #res-edit, #res-del {
-  padding: 0 3px;
+  padding: 3px;
   color: #FF5E00;
   background-color: #ffffff;
 }
@@ -476,6 +477,46 @@ font-size: 2em;
 
 .edit-project {
   display: none;
+}
+
+.invoice-top {
+  margin: 30px 25px;
+  padding: 20px;
+  background-color: #FF5E00;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.gen-text {
+  font-size: 16px;
+  margin-left: 50px;
+}
+
+#generateBtn {
+  padding:10px;
+  border-radius: 4px;
+  margin-left: 50%;
+  background-color: #ffffff;
+  color: #FF5E00;
+}
+
+#invoiceDays {
+   padding: 8px;
+   width: 6%;
+   border: none;
+   border-radius: 4px;
+   margin-left: 5px;
+}
+
+.total {
+  padding:15px;
+  background-color: #FF5E00;
+  color: #ffffff;
+  font-size: 17px;
+  margin: 40px;
+  border-radius: 5px;
+  width: 25%;
+
 }
 /*................................................
     FOOTER SECTION
