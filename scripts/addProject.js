@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
 
     document.getElementById("project-detail").style.display = "block";
     document.getElementById("project-resourc").style.display = "none";
+    createTable();
 })
  
 //variables for project details area

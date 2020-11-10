@@ -94,10 +94,9 @@
                     </form>
                 </div>
             </div>
-            
             <div class="tab flex-box" id="tab">
                 <ul class="menu-bar flex-box" id="menu">
-                    <li class="menu" id="details"><a id="active" >Details</a></li>
+                    <li class="menu" id="details"><a >Details</a></li>
                     <li class="menu" id="resources"><a>Resources</a></li>
                     <li class="menu" id="invoice"><a>Invoice</a></li>
                 </ul>
@@ -149,22 +148,56 @@
                     </div>                
                 </div>
                 <div class="project-resource" id="project-resourc">
-                    <i class="fa fa-plus-circle" id="resource-add"></i>
-                    <div class="res-inner">
-                        <table class="tables">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Role</th>
-                                    <th>Email</th>
-                                    <th>Billable</th>
-                                    <th>Rate/ hour</th>
-                                    <th class="remove-background"></th>
-                                  </tr>
-                            </thead>
-                            <!-- Resource table content -->
-                            <tbody id="resource-table--body">           
-                            </tbody>
+                    <div class="add-res flex-box">
+                        <i class="fa fa-plus-circle" id="resource-add"></i>
+                        <div class="modal-resource" id="modal-content-resource">
+                            <span class="modal-header">
+                                <h3 id='res-form-title'>Add Resources</h3> 
+                            </span>
+                            <form class="modal-resource-body" id="resource-form">
+                                <h4 id="current-res-project">Project name</h4>
+                                <div class="form-feild">
+                                    <label for="employee-name">Employee Name</label><br>
+                                    <input type="text" name="employee-name" id="employee-name" class="rform-input" maxlength="200" autocomplete="off">
+                                    <span id="ename-error" class="error-msg"></span>
+                                </div>
+                                <div class="form-feild">
+                                    <label for="employee-role">Role</label><br>
+                                    <input type="text" name="employee-role" id="employee-role" class="rform-input" maxlength="200" autocomplete="off">
+                                    <span id="role-error" class="error-msg"></span>
+                                </div>
+                                <div class="form-feild">
+                                    <label for="employee-email">Email</label><br>
+                                    <input type="email" name="employee-email" id="employee-email" class="rform-input" maxlength="200" autocomplete="off">
+                                    <span id="email-error" class="error-msg"></span>
+                                </div>
+                                <div class="form-feild flex-box" id="res-billable">
+                                    <label for="employee-billable">Billable</label>
+                                    <input type="checkbox" name="employee-billable" id="employee-billable" class="rform-input" maxlength="200" autocomplete="off">
+                                    <span id="billable-error" class="error-msg"></span>
+                                </div>
+                                <div class="form-feild">
+                                    <label for="employee-rate">Rate per Hour</label><br>
+                                    <input type="number" name="employee-rate" id="employee-rate" class="rform-input" maxlength="200" autocomplete="off">
+                                    <span id="rate-error" class="error-msg"></span>
+                                </div>
+                                <label for="buttons" class="pro-btn">
+                                    <input type="button" value="Cancel" class="cancel-project" id="cancel-res">
+                                    <input type="submit" value="Add Resource" class="add-project" id="submit-res-button">
+                                    <input type="submit" value="Save Changes" class="edit-project" id="edit-res-button">
+                                </label>
+                            </form>
+                        </div>
+                    </div> 
+                   
+                    <div class="res-inner" id="res-inner">
+                        <div class="del-modal" id="del-modal">
+                            <span class="del-text">Please confirm to delete the resource list</span><br>
+                            <button type="button" value="yes" id="yesBtn">Yes</button>
+                            <button type="button" value="no" id="noBtn">No</button>
+                        </div>
+                        <table class="tables" id="res-table">
+                            <tbody id="resource-table--body"></tbody>
                         </table>
                     </div>
                     

@@ -71,7 +71,7 @@ main {
     margin-bottom: 0;
 }
 
-#active {
+.active {
   background-color:  #FF5E00 ;
   color: #ffffff;
 }
@@ -367,6 +367,7 @@ font-size: 2em;
     color: #FF5E00;
     margin: 15px;
     cursor: pointer;
+    height: 30px;
 }
 
 #resource-add:hover {
@@ -380,18 +381,102 @@ font-size: 2em;
   padding: 5px 2px;
 }
 
-.tables{
-  width: 110%;
+.tables td {
+  padding: 10px 45px;
+  text-align: center;
 }
 
 .tables th {
   font-size: 16px;
-  padding: 0 70px;
+  padding: 10px 45px;
   border: 0 ;
   margin: 0 auto;
 }
 
+.modal-resource {
+  display: none;
+  position: fixed;
+  left:45%;
+  top: 15%;
+  padding: 20px 30px;
+  margin: auto;
+  margin-top: 15px;
+  width: 30%;
+  box-shadow: 0 0 5px 5px #aaaaaa;
+  background-color: #CDD0D6;
+  border-radius: 5px;
+}
 
+#cancel-res {
+  padding: 10px 20px;
+}
+
+#submit-res-button {
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #FF5E00;
+}
+
+#resource-form {
+  background-color: #CDD0D6;
+}
+
+#res-billable {
+  display: flex;
+  justify-content: left;
+}
+
+#employee-billable {
+  width: 10%;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.rform-input{
+  width: 100%;
+  padding: 5px ;
+}
+
+#current-res-project {
+  margin-left: 10px;
+}
+
+#res-edit, #res-del {
+  padding: 0 3px;
+  color: #FF5E00;
+  background-color: #ffffff;
+}
+
+#res-edit {
+  padding-right: 20px;
+}
+
+.del-modal {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #FF5E00;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.del-modal button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#yesBtn {
+  margin-left: 45px;
+  margin-right: 10px;
+}
+
+.edit-project {
+  display: none;
+}
 /*................................................
     FOOTER SECTION
 .................................................*/
