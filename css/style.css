@@ -516,7 +516,32 @@ font-size: 2em;
   margin: 40px;
   border-radius: 5px;
   width: 25%;
+}
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+#resource-add .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #FF5E00;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 12px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  margin-left: 3px;
+}
+
+#resource-add:hover .tooltiptext {
+  visibility: visible;
 }
 /*................................................
     FOOTER SECTION

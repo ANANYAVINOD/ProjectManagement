@@ -9,7 +9,6 @@ const required = requireddata.filter(data => data[3] == "true");
 const tableData = required.map(data => [data[0], data[1], data[2]]);
 console.log(tableData);
 
-
 function invoiceTable() {
     const newTable = document.getElementById("invoice-table");
     const table = document.createElement('table');
