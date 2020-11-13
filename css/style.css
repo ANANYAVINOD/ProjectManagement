@@ -7,9 +7,10 @@ html {
 }
 .container {
     color: #000;
-    background-color: #F7F7F7;
     align-items: center;
     padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    background-color: #ffffff;
 }
 
 .flex-box {
@@ -19,21 +20,56 @@ html {
 
 .sec-right {
     align-items: center;
+    padding: 10px 50px;
+    background-color: #FF5E00 ;
+    border-radius: 8px;
+}
+
+.menuTab {
+    align-items: center;
     padding: 20px 50px;
     background-color: #FF5E00 ;
     border-radius: 8px;
-   
 }
 
+.menuTab:hover, 
+.sec-right:hover {
+  box-shadow:   0 0 5px #fff, 0 0 10px #FF5E00;
+  cursor: pointer;
+}
+
+.menuTab a {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.sec-centre {
+  margin-left: 45%;
+}
+
+#menu-dash {
+  margin-right: 15px;
+}
 .sec-left {
   width: 80px;
+}
+
+.currentMenu {
+  background-color: #ffffff;
+  color: #FF5E00;
+  border: 2px solid #FF5E00;
+}
+
+.currentMenu a {
+  color: #FF5E00;
 }
 
 h1 {
   margin-left: 10px;
   font-size: 25px;
-    line-height: 1;
+  line-height: 1;
 }
+
 #logout-btn {
     padding: 10px;
     background-color: #ffffff;
@@ -554,10 +590,31 @@ font-size: 2em;
     text-align: center;
 }
 
-@media (max-width:990px) {
+@media (max-width:1200px) {
   .tables th {
     font-size: 14px;
     padding: 0 20px;
-    
   }
+  .menuTab {
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #FF5E00 ;
+    border-radius: 8px;
+}
+
+.menuTab a {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.sec-centre {
+  margin-left: 20%;
+}
+
+#menu-dash {
+  margin-right: 10px;
+}
+.sec-left {
+  width: 60px;
+}
 }

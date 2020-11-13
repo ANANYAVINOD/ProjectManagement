@@ -1,0 +1,277 @@
+/*................................................
+    HEADER SECTION
+.................................................*/
+html {
+    margin: 0 auto;
+      overflow-x: hidden;
+}
+
+#header {
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.container {
+      color: #000;
+      background-color: #ffffff;
+      align-items: center;
+      padding: 20px 20px;
+      margin: 0 auto;
+}
+  
+.flex-box {
+      display: flex;
+      justify-content: space-between;
+}
+  
+.sec-right {
+      align-items: center;
+      padding: 10px 50px;
+      background-color: #FF5E00 ;
+      border-radius: 8px;
+}
+  
+.menuTab {
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #FF5E00 ;
+      border-radius: 8px;
+}
+  
+.menuTab:hover, 
+.sec-right:hover {
+    box-shadow:   0 0 5px #fff, 0 0 10px #FF5E00;
+    cursor: pointer;
+}
+  
+.menuTab a {
+    color: #ffffff;
+    font-size: 16px;
+}
+  
+.sec-centre {
+    margin-left: 45%;
+}
+  
+#menu-dash {
+    margin-right: 15px;
+}
+
+.sec-left {
+    width: 80px;
+}
+  
+.currentMenu {
+    background-color: #ffffff;
+    color: #FF5E00;
+    border: 2px solid #FF5E00;
+}
+  
+.currentMenu a {
+    color: #FF5E00;
+}
+  
+h1 {
+    margin-left: 10px;
+    font-size: 25px;
+    line-height: 1;
+}
+  
+#logout-btn {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #FF5E00;
+  margin-left: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+  
+.name-display {
+  margin-right: 20px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/*................................................
+    MAIN SECTION
+.................................................*/
+main {
+    padding: 10px 0 10px 0; 
+    margin: 0 auto;
+}
+
+.project-card {
+    width: 45%;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    padding-right: 15px;
+    border-radius: 5px;
+}
+
+.pro-card {
+    padding: 30px;
+    font-size: 16px;
+    background-color: #FF5E00;
+    width: 45%;
+    margin: 20px 0 20px 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.pro-card:hover {
+    box-shadow:   0 0 5px #fff, 0 0 10px #FF5E00;
+}
+
+.card {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bolder;
+    align-items: center;
+}
+
+.number-display {
+    font-size: 50px;
+}
+
+.project-number {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pro-display {
+    margin-top: 13px;
+}
+
+.technology-card {
+    width: 45%;
+    height: 340px;
+    overflow-y: scroll;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    padding: 25px 5px 20px 5px;
+    border-radius: 5px;
+}
+
+.technology {
+    padding: 5px 15px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+#tech-title {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.progress:hover {
+    box-shadow:   0 0 5px #fff, 0 0 10px #FF5E00;
+}
+.technology-name {
+    text-align: left;
+    margin-left: 33px;
+    color: #8E8E8E;
+}
+
+.technology-card::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.technology-card::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.technology-card::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #E5E5E5;
+}
+
+.card-title {
+    padding: 15px 0 6px 20px; 
+    font-size: 13px; 
+    font-weight: lighter;
+    color:#FF5E00;
+    position: absolute;
+    width: inherit;
+}
+
+.card-plot {
+    padding: 45px 5px 15px 25px;
+}
+
+.plot {overflow: hidden;}
+
+.chart {
+    height: auto;
+}
+
+.card{
+    border-radius: 6px;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.card-icon { 
+    align-self: center; 
+    border-radius: 50%; 
+    box-shadow: inset 1px 1px 18px 5px#FF5E00;
+}
+
+.section-two {
+    margin-top: 30px;
+}
+
+.technology .count {
+    font-size: 40px;
+    margin: 0px 30px 0 20px;
+    text-align: center;
+    color: #FF5E00;
+    font-weight: bold;
+}
+
+.progress {
+    margin: 15px 3px 0 0;
+    background: #FF5E00;
+	-moz-border-radius: 26px;
+	-webkit-border-radius: 26px;
+	border-radius: 26px;
+    padding: 3px;
+    width: 0%;
+}
+
+
+/*................................................
+    FOOTER SECTION
+.................................................*/
+.footer {
+    background-color:#FF5E00;
+    color: #ffffff;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+/*................................................
+    RESPONSIVE
+.................................................*/
+@media (max-width:1200px) {
+    .menuTab {
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #FF5E00 ;
+      border-radius: 8px;
+    }
+
+  .menuTab a {
+    color: #ffffff;
+    font-size: 14px;
+  }
+
+  .sec-left {
+    width: 60px;
+  }
+
+  .sec-centre {
+    margin-left: 20%;
+}
+}

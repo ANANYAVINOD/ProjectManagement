@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="icon" href="./images/logo.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script defer src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>    
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.0.0/d3.min.js"
+        integrity="sha512-5K26U2JrBY0NJ/PVtWxH83wFeLdHPnrUxfw5GrE+kYTR8NglhnG0AdxFCJJuaPIp/4WJTaWK6MZHagmkBcgA2g=="
+        crossorigin="anonymous"></script>    
+    <script defer src="https://www.w3schools.com/lib/w3.js"></script>
+    <script defer src="./scripts/dasboard.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container flex-box">
+            <div class="sec-left flex-box">
+                <img src="./images/logo.png" alt="logo">
+                <h1>Project Management System</h1>
+            </div>
+            <div class="sec-centre flexbox">
+                <span class="menuTab currentMenu" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
+                <span class="menuTab"><a href="./index.html">Projects</a></span>
+            </div>
+            <div class="sec-right flex-box">
+                <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
+                <button id="logout-btn" type="submit" value="Logout">Logout <i class="fas fa-sign-out"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="section-one flex-box">
+                <div class="project-card" id="projectCard">
+                    <div class="top-sec flex-box" id="top-sec">
+                        <div class="pro-card project-number">
+                            <div class="card-inner">
+                                <i class="fas fa-clipboard-list card" id="proIcon"></i><br>
+                                <span class="text">Active Projects</span> 
+                            </div>
+                            <div class="pro-display">
+                                <span class="number-display" id="projects">10</span>
+                            </div>
+                        </div>
+                        <div class="pro-card project-number">
+                            <div class="card-inner">
+                                <i class="fas fa-user card"></i><br>
+                                <span class="text">Employees</span>
+                            </div>
+                            <div class="pro-display">
+                                <span class="number-display" id="employees">10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-sec flex-box">
+                        <div class="pro-card project-number">
+                            <div class="card-inner">
+                                <i class="fas fa-file-invoice-dollar card" id="billIcon"></i><br>
+                                <span class="text">Billable Resources</span>  
+                            </div>
+                            <div class="pro-display">
+                                <span class="number-display" id="billables">10</span>
+                            </div>
+                        </div>
+                        <div class="pro-card project-number">
+                            <div class="card-inner">
+                                <i class="fas fa-user-friends card" id="shadowIcon"></i><br>
+                                <span class="text">Shadow Resources</span>
+                            </div>
+                            <div class="pro-display">
+                                <span class="number-display" id="shadows">10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technology-card">
+                    <h3 id="tech-title">Technology</h3>
+                    <section class="technology-project-count" id="technology-project-count">
+                    </section>
+                </div>
+            </div>
+            <div class="section-two flex-box">
+                <div class="card chart " id="tecnology-vs-project">
+                    <span class="card-title">Technology vs Projects</span>
+                    <div class="card-plot">
+                        <canvas id="tech-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card chart" id="project-vs-resources">
+                    <span class="card-title">Projects vs Resources</span>
+                    <div class="card-plot">
+                        <canvas id="resource-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">Copyright</footer>
+    </body>
+</html>

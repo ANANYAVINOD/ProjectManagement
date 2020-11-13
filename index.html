@@ -12,11 +12,15 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="container flex-box">
             <div class="sec-left flex-box">
                 <img src="./images/logo.png" alt="logo">
                 <h1>Project Management System</h1>
+            </div>
+            <div class="sec-centre flexbox">
+                <span class="menuTab" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
+                <span class="menuTab currentMenu"><a href="./index.html">Projects</a></span>
             </div>
             <div class="sec-right flex-box">
                 <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
@@ -105,9 +109,11 @@
 
             <div class="content flex-box" id="content">
                 <div class="project-bar flex-box">
-                <div class="pro-flex"><h2>Recent Projects</h2>
+                <div class="pro-flex">
+                    <h2>Recent Projects</h2>
                     <ul class="project-list" id="prolists">
-                    </ul></div> 
+                    </ul>
+                </div> 
                 </div>
                 <div class="project-details" id="project-detail">
                     <div class="project-inner flex-box">
