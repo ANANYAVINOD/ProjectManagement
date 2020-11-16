@@ -115,15 +115,15 @@ function displayTechnologyBar() {
     const techCountArray = Object.values(sortObj);
     
     for (let x in sortObj) {
-        const projectsPerTechnologyList = `<div class="technology">
+        const technologyList = `<div class="technology">
         <span class="count">${sortObj[x]}</span>
-        <span class="technology__details">
+        <span class="technology-details">
           <span class="progress"></span><br>
           <span class="technology-name">${x.toUpperCase()}</span>  
         </span></div>`;
         console.log(sortObj[x]);
         console.log(x);
-        technologyProjectCount.innerHTML += projectsPerTechnologyList;
+        technologyProjectCount.innerHTML += technologyList;
     }
     const progressBar = d3.selectAll('.progress').data(techCountArray);
     const totalProjects = validProjects.length;
