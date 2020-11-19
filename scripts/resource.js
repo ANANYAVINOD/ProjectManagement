@@ -83,7 +83,7 @@ const addTable = document.getElementById("res-table");
 function createTable() {
 
     const table = document.createElement('table');
-    const resList =JSON.parse(localStorage.getItem("resources"));
+    const resList = JSON.parse(localStorage.getItem("resources"));
     const headers = ["Project" , "Name" , "Role" , "Email" , "Billable" , "Rate/Hour"]
     const headerRow = document.createElement("tr");
     headers.forEach(headerText=> {
@@ -182,19 +182,31 @@ document.getElementById("details").addEventListener("click" , function() {
     document.getElementById("project-detail").style.display = "block";
     document.getElementById("project-resourc").style.display = "none";
     document.getElementById("project-invoice").style.display = "none";
+    document.getElementById("project-status").style.display = "none";
 });
 
 document.getElementById("resources").addEventListener("click" , function() {
     document.getElementById("project-detail").style.display = "none";
     document.getElementById("project-resourc").style.display = "block";
     document.getElementById("project-invoice").style.display = "none";
+    document.getElementById("project-status").style.display = "none";
 });
 
 document.getElementById("invoice").addEventListener("click" , function() {
     document.getElementById("project-detail").style.display = "none";
     document.getElementById("project-resourc").style.display = "none";
     document.getElementById("project-invoice").style.display = "block";
+    document.getElementById("project-status").style.display = "none";
 });
+
+document.getElementById("activity").addEventListener("click" , function() {
+    document.getElementById("project-detail").style.display = "none";
+    document.getElementById("project-resourc").style.display = "none";
+    document.getElementById("project-invoice").style.display = "none";
+    document.getElementById("project-status").style.display = "block";
+});
+
+
 
 document.getElementById("resource-add").addEventListener("click" , function() {
     document.getElementById("modal-content-resource").style.display = "block";

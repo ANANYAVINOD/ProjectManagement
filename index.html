@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="icon" href="./images/logo.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.0.0/d3.min.js"
+        integrity="sha512-5K26U2JrBY0NJ/PVtWxH83wFeLdHPnrUxfw5GrE+kYTR8NglhnG0AdxFCJJuaPIp/4WJTaWK6MZHagmkBcgA2g=="
+        crossorigin="anonymous"></script> 
+        <script defer src="https://www.w3schools.com/lib/w3.js"></script>    
+        <script defer src="./scripts/status.js"></script>
 </head>
 
 <body>
@@ -103,18 +109,23 @@
                     <li class="menu" id="details"><a >Details</a></li>
                     <li class="menu" id="resources"><a>Resources</a></li>
                     <li class="menu" id="invoice"><a>Invoice</a></li>
+                    <li class="menu" id="activity"><a>Status</a></li>
                 </ul>
                 <button class="editBtn" id="edit" type="submit">Edit <i class="fa fa-pencil editPencil"></i></button>
             </div>
 
             <div class="content flex-box" id="content">
+                <!--left-section-->
                 <div class="project-bar flex-box">
-                <div class="pro-flex">
-                    <h2>Recent Projects</h2>
-                    <ul class="project-list" id="prolists">
-                    </ul>
-                </div> 
+                    <div class="pro-flex">
+                        <h2>Recent Projects</h2>
+                        <ul class="project-list" id="prolists">
+                        </ul>
+                    </div> 
                 </div>
+
+                <!--main-right-section-->
+                <!--details-tab-->
                 <div class="project-details" id="project-detail">
                     <div class="project-inner flex-box">
                         <div class="left-sec">
@@ -151,8 +162,19 @@
                     <div class="project-description">
                         <label for="description"><b>Description:</b></label>
                         <span class="currentProject" id="description">Description</span><br>
+                    </div>
+                    <div class="project-time">
+                        <span class="time-title">
+                            <span id="timeTitle"><b>Total hours spent:</b></span>
+                            <span id="totalTime"></span>
+                        </span>
+                        <span id="time-per-emp">
+
+                        </span>
                     </div>                
                 </div>
+
+                <!--resource-tab-->
                 <div class="project-resource" id="project-resourc">
                     <div class="add-res flex-box">
                         <i class="fa fa-plus-circle" id="resource-add">
@@ -210,6 +232,7 @@
                     </div>
                 </div>
 
+                <!--invoice-tab-->
                 <div class="project-invoice" id="project-invoice">
                     <div class="invoice-top">
                         <span class="gen-text">Number of working days:</span>
@@ -221,14 +244,79 @@
                     </table>
                     <div class="total" id="total">Total Amount</div>
                 </div>
-            </div>
 
+                <!--status-tab-->
+                <div class="project-status" id="project-status">
+                    <h3 id="status-heading">Daily Status</h3>
+                    <h4 id="current-project"></h4>
+                    <div class="status-form flex-box">
+            
+                        <div class="status-field">
+                            <label for="date">Date</label><br>
+                            <select name="date" id="dates"></select>
+                        </div>
+
+                        <div class="status-field">
+                            <label for="resources">Resource</label><br>
+                            <select name="resource-list" id="resources-list"></select>
+                            <span id="resname-error"></span>
+                        </div>
+
+                        <div class="status-field">
+                            <label for="activity-type">Activity Type</label><br>
+                            <select name="activity-type" id="activity-type">
+                              <option value="Project management">Project management</option>
+                              <option value="Training">Training</option>
+                              <option value="Architecting">Architecting</option>
+                              <option value="Requirements analysis">Requirements analysis</option>
+                              <option value="System design">System design</option>
+                              <option value="Coding" selected>Coding</option>
+                              <option value="Graphic design">Graphic design</option>
+                              <option value="Testing">Testing</option>
+                              <option value="HTML/CSS">HTML/CSS</option>
+                              <option value="Pre-sales">Pre-sales</option>
+                              <option value="Tech Support">Tech Support</option>
+                              <option value="UX design">UX design</option>
+                              <option value="Marketing">Marketing</option>
+                              <option value="Business Analysis">Business Analysis</option>
+                              <option value="Recruitment & HR">Recruitment &amp; HR</option>
+                              <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="status-field flex-box">
+                            <div class="time">
+                                <label for="spent">Time Spent (hours : minutes)</label><br>
+                                <select name="time-spent" id="time-spent"></select>
+                                <select name="time-spent-minutes" id="time-spent-minutes"></select><br>
+                                <span id="restime-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="status-field">
+                            <div class="save-button">
+                                <button type="submit" value="Save" class="statusButton" id="status-btn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-modal" id="time-modal">
+                        <span class="del-text">Maximum working hours for an employee is 16 hours</span><br>
+                        <span class="del-text">Please recheck the time</span><br>
+                        <button type="button" value="ok" id="time-modal-button">Ok</button>
+                    </div>
+                    <span class="history"><h3>History</h3></span>
+                    <div class="status-history">
+                        <div class="history-tab" id="history-tab"></div>
+                    </div>
+                </div>
+            </div>
         </main>
     <footer class="footer">Copyright</footer>
     <script src="./scripts/resource.js"></script>
     <script src="./scripts/formValidation.js"></script>
     <script src="./scripts/addProject.js"></script>
     <script src="./scripts/invoice.js"></script>
+    
     
 </body>
 </html>
