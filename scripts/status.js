@@ -16,7 +16,6 @@ function saveStatus() {
         const postTime = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
 
         let hoursSpent = calculateWorkingHours(statusDate, statusRes);
-        console.log(hoursSpent);
         
         const [hours, minutes] = statusTime.split(':');
         const inputHours = Number(hours) + (Number(minutes)/60) ;
@@ -187,7 +186,9 @@ function loadTimeSpent() {
     let totalHours = 0;
     let totalHoursSpentEach = 0;
     const timeSpentEach = document.getElementById("time-per-emp");
-    let hoursCountArray =[] ;
+    const totalBar = document.getElementById("time-total");
+    let hoursCountArray = [] ;
+    const bgColor = ['red', 'blue' , 'yellow', 'orange', 'green', 'coral', 'gray', 'brown', 'pink'];
     for (let x in statusPerEmp) {
         const hoursPerEmp = statusPerEmp[x].reduce((acc, curr) => {
             const [hours, minutes] = curr.hours.split(':');
@@ -207,9 +208,19 @@ function loadTimeSpent() {
             <span class="progress-hours"></span></span></div>`
         timeSpentEach.innerHTML += timeList;
         hoursCountArray.push(hoursPerEmp[x]);
+    
+        const time = calculatePercentTime();
+        const totalProgress = document.createElement("span");
+        totalProgress.className = "totalPro";
+        totalProgress.innerHTML = x + `<span class="tooltiphour">${x +" " + hoursPerEmp[x] + " hour(s)"}</span>`;
+        totalProgress.style.width = (hoursPerEmp[x])/time *100 + '%';
+
+        totalBar.appendChild(totalProgress); 
+        const n = Array.from(totalBar.children).indexOf(totalProgress);
+        totalProgress.style.backgroundColor = bgColor[n];
+        console.log(n);        
     }
     totalHours += totalHoursSpentEach;
-    console.log(totalHours);
     document.getElementById("totalTime").innerHTML = totalHours + " hour(s)";
 
     const timeBar = d3.selectAll('.progress-hours').data(hoursCountArray);
@@ -220,3 +231,31 @@ function loadTimeSpent() {
             .duration('1000');
 }
 loadTimeSpent();
+
+function calculatePercentTime() {
+    const statusPerPro = allStatus.filter(items => items.project == currentResources.name);
+    console.log(statusPerPro);
+    const groupStatus = (array, key) => {
+        return array.reduce((result, currentValue) => {
+          (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
+          return result;
+        },{}); 
+    };
+    const statusPerEmp = groupStatus(statusPerPro , 'name');
+    let totalHours = 0;
+    let totalHoursSpentEach = 0;
+    for (let x in statusPerEmp) {
+        const hoursPerEmp = statusPerEmp[x].reduce((acc, curr) => {
+            const [hours, minutes] = curr.hours.split(':');
+            const timeSpent = Number(hours) + Number(minutes) / 60;
+            acc[curr.name] ? acc[curr.name] += timeSpent : acc[curr.name] = timeSpent;
+            totalHoursSpentEach += timeSpent;
+            return acc;
+        }, {}); 
+    }
+    totalHours += totalHoursSpentEach;
+    console.log(totalHours);
+    return totalHours;
+}
+
+calculatePercentTime();

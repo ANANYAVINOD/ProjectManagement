@@ -554,13 +554,13 @@ font-size: 2em;
   width: 25%;
 }
 
-.tooltip {
+.tooltip, .tooltiphour {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
 }
 
-#resource-add .tooltiptext {
+#resource-add .tooltiptext{
   visibility: hidden;
   width: 100px;
   background-color: #FF5E00;
@@ -576,8 +576,30 @@ font-size: 2em;
   margin-left: 3px;
 }
 
-#resource-add:hover .tooltiptext {
+.totalPro .tooltiphour {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1px 0px;
+  font-size: 12px;
+  opacity: 0.8;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  margin-left: 3px;
+}
+
+#resource-add:hover .tooltiptext,
+.totalPro:hover .tooltiphour {
   visibility: visible;
+}
+
+.totalPro:hover {
+  cursor: pointer;
 }
 
 /*................................................
@@ -734,6 +756,14 @@ font-size: 2em;
   -webkit-border-radius: 26px;
   width: 77%;
   background-color: #D2D2D2;
+}
+
+#time-total {
+  display: flex;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 100%;
 }
 
 /*................................................
