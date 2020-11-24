@@ -24,18 +24,33 @@
                 <img src="./images/logo.png" alt="logo">
                 <h1>Project Management System</h1>
             </div>
-            <div class="sec-centre flexbox">
-                <span class="menuTab" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
-                <span class="menuTab currentMenu"><a href="./index.html">Projects</a></span>
+            <div class="main-menu flex-box" id="main-menu">
+                <div class="sec-centre flex-box">
+                    <span class="menuTab" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
+                    <span class="menuTab currentMenu"><a href="./index.html">Projects</a></span>
+                </div>
+                <div class="sec-right flex-box">
+                    <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
+                    <button id="logout-btn" type="submit" value="Logout">Logout <i class="fa fa-sign-out"></i></button>
+                </div>
             </div>
-            <div class="sec-right flex-box">
-                <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
-                <button id="logout-btn" type="submit" value="Logout">Logout <i class="fa fa-sign-out"></i></button>
+            <div class="menu-ham" id="menuHam">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
+            
         </div>
     </header>
+
     <main>
         <div class="main-container">
+            <div class="menu-res" id="responsive">
+                <span class="resTab" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span><br>
+                <span class="resTab"><a href="./index.html">Projects</a></span><br>
+                <span class="user-display">Welcome, <i class="fa fa-user"></i> User</span>
+                <button id="logout-btn-res" type="submit" value="Logout"> <i class="fa fa-sign-out"></i></button>
+            </div>
             <button type="button" id="newBtn">+ New</button>    
 
             <!-- The Modal -->
@@ -65,19 +80,19 @@
                             <input type="text" name="project-manager" id="project-manager" class="form-input" autocomplete="off">
                             <span id="pmname-error" class="error-msg"></span>
                         </div>
-
+                
                         <div class="form-feild">
                             <label for="start-date">Start Date</label><br>
                             <input type="date" name="start-date" id="start-date" class="form-input">
                             <span id="start-date-error" class="error-msg"></span>
                         </div>
-
+    
                         <div class="form-feild">
                             <label for="end-date">End Date</label><br>
                             <input type="date" name="end-date" id="end-date" class="form-input">
-                            <span id="end-date-error" class="error-msg"></span>
+                           <span id="end-date-error" class="error-msg"></span>
                         </div>
-
+                
                         <div class="form-feild">
                             <label for="status">Progress level</label><br>
                             <input type="number" name="status" id="status" class="form-input">
@@ -136,17 +151,17 @@
                             <span class="currentProject" id="proManager"></span><br>
                             <span class="currentProject" ><b>Project Status:</b></span>
                             <span class="currentProject" id="proStatus"></span><br>
-                            <span class="currentProject" ><b>Start Date:</b></span>
-                            <span class="currentProject" id="proSdate"></span>
-                            <span class="currentProject" ><b>End Date:</b></span>
-                            <span class="currentProject" id="proEdate"></span><br>
+                            <span class="currentProjectDates flex-box" id="currentProDates">
+                                <span class="currentProject" ><b>Start Date: </b> <span class="currentProject" id="proSdate"></span></span>
+                                <span class="currentProject" ><b>End Date: </b><span class="currentProject" id="proEdate"></span><br></span>
+                            </span> 
                             <span class="currentProject" ><b>Duration:</b> </span>
                             <span class="currentProject" id="day"></span>
                         </div>
                         <div class="right-sec">
                             
                             <div class="progress" id="progress">
-                                <svg class="progress-circle" width="180px" height="180px" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="progress-circle" xmlns="http://www.w3.org/2000/svg">
 	                                <circle class="progress-circle-back" cx="80" cy="80" r="74"></circle>
                                     <circle class="progress-circle-prog" cx="80" cy="80" r="74"></circle>
                                 </svg>

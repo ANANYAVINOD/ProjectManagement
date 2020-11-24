@@ -3,7 +3,6 @@
 .................................................*/
 html {
   margin: 0 auto;
-    overflow-x: hidden;
 }
 .container {
     color: #000;
@@ -17,12 +16,54 @@ html {
     display: flex;
     justify-content: space-between;
 }
+.main-menu .flex-box {
+  justify-content: flex-start;
+}
+
+.main-menu {
+  width: 100%;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.line {
+  padding: 2px 20px 1px 20px;
+  margin-bottom: 4px;
+  background-color: #FF5E00;
+  border: 1px solid #FF5E00;
+  border-radius: 2px;
+}
+
+.menu-res {
+  display: none;
+  position: absolute;
+  padding: 18px 18px 25px 18px;
+  background-color: #FF5E00;
+  left: 80%;
+  color: #ffffff;
+  font-size: 18px;
+  top: 80px;
+}
+
+.menu-res a {
+  color: #ffffff;
+  font-size: 18px;
+}
 
 .sec-right {
     align-items: center;
     padding: 10px 50px;
     background-color: #FF5E00 ;
     border-radius: 8px;
+}
+
+.show {
+  display: block;
+}
+
+.fa-sign-out {
+  color: #FF5E00;
+  padding: 5px;
 }
 
 .menuTab {
@@ -44,7 +85,7 @@ html {
 }
 
 .sec-centre {
-  margin-left: 45%;
+  margin-left: 48%;
 }
 
 #menu-dash {
@@ -214,9 +255,7 @@ h2 {
 }
 
 .currentProject {
-   margin-bottom: 50px;
-   margin-left: 20px;
-   padding: 50px 0;
+   margin-left: 15px;
 }
 
 .left-sec {
@@ -268,6 +307,8 @@ h2 {
 .progress-circle {
 transform: rotate(-90deg);
 margin-top: -30px;
+width: 180px;
+height: 180px;
 }
 
 .progress-circle-back {
@@ -776,17 +817,19 @@ font-size: 2em;
     padding: 30px;
     text-align: center;
 }
+/*................................................
+    MEDIA QUERIES
+.................................................*/
+@media (max-width:1500px) {
+.tables th {
+  font-size: 14px;
+  padding: 0 20px;
+}
 
-@media (max-width:1200px) {
-  .tables th {
-    font-size: 14px;
-    padding: 0 20px;
-  }
-  .menuTab {
-    align-items: center;
-    padding: 20px 30px;
-    background-color: #FF5E00 ;
-    border-radius: 8px;
+.menuTab {
+  padding: 20px 30px;
+  background-color: #FF5E00 ;
+  border-radius: 8px;
 }
 
 .menuTab a {
@@ -795,7 +838,7 @@ font-size: 2em;
 }
 
 .sec-centre {
-  margin-left: 20%;
+  margin-left: 53%;
 }
 
 #menu-dash {
@@ -805,3 +848,125 @@ font-size: 2em;
   width: 60px;
 }
 }
+
+@media (max-width:1400px) {
+  .menuTab {
+    align-items: center;
+    
+    background-color: #FF5E00 ;
+    border-radius: 8px;
+}
+
+.menuTab a {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.sec-right {
+  padding: 8px 20px;
+  font-size: 12px;
+}
+
+#menu-dash {
+  align-items: center;
+}
+
+.sec-centre {
+  margin-left: 55%;
+}
+}
+
+@media(max-width: 1300px) {
+  .sec-right {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .name-display {
+    margin-right: 15px;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  .menuTab {
+    padding: 15px 20px;
+  }
+  #dates {
+    padding: 2px 25px;
+  }
+  #resources-list {
+    padding: 2px 25px;
+  }
+  #activity-type {
+    padding: 2px 0;
+  }
+  #time-spent, #time-spent-minutes {
+    padding: 2px 25px;
+    margin-right: 2px;
+  }
+  #status-btn {
+    padding: 8px 10px;
+  }
+}
+
+@media(max-width: 1100px) {
+  #main-menu {
+    display: none;
+  }
+  #box {
+    margin: 0px 25px 15px 5px;
+    width: 60%;
+  }
+}
+
+@media(min-width: 1100px) {
+  body {
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
+  .line {
+    display: none;
+  }
+}
+
+@media(max-width: 900px) {
+.progress {
+    height: 140px;
+    width: 140px;
+    cursor: pointer;
+    top: 45%;
+    left: 80%;
+}
+.progress-text {
+  top: 55px;
+  left: 15px;
+}
+#currentProDates {
+  flex-direction: column;
+}
+h2 {
+  font-size: 15px;
+}
+}
+
+@media(max-width: 700px) {
+  #progress {
+    display: none;
+  }
+  h2 {
+    font-size: 13px;
+  }
+  .project-list li {
+    padding: 10px 28px 10px 15px;
+    width: 360px;
+    margin: 10px 0 0 0;
+    border-radius: 15px 0 0 15px;
+    font-size: 13px;
+  }
+  #box {
+    width: 45%;
+  }
+  .totalPro {
+    font-size: 10px;
+  }
+}
+
+

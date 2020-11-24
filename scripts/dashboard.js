@@ -137,6 +137,17 @@ function displayTechnologyBar() {
 
 displayTechnologyBar();
 
+function menuDisplay() {
+    const resMenu = document.getElementById("responsive");
+    const resIcon = document.getElementById("menuHam");
+    resIcon.addEventListener("click" , function(){
+        resMenu.classList.toggle("show");
+    })
+}
+
+menuDisplay();
+            
+
 
 
 

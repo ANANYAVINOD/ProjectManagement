@@ -28,18 +28,31 @@
                 <img src="./images/logo.png" alt="logo">
                 <h1>Project Management System</h1>
             </div>
-            <div class="sec-centre flexbox">
-                <span class="menuTab currentMenu" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
-                <span class="menuTab"><a href="./index.html">Projects</a></span>
+            <div class="main-menu flex-box" id="main-menu">
+                <div class="sec-centre flex-box">
+                    <span class="menuTab currentMenu" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span>
+                    <span class="menuTab"><a href="./index.html">Projects</a></span>
+                </div>
+                <div class="sec-right flex-box">
+                    <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
+                    <button id="logout-btn" type="submit" value="Logout">Logout <i class="fa fa-sign-out"></i></button>
+                </div>
             </div>
-            <div class="sec-right flex-box">
-                <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
-                <button id="logout-btn" type="submit" value="Logout">Logout <i class="fas fa-sign-out"></i></button>
+            <div class="menu-ham" id="menuHam">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </div>
     </header>
     <main>
         <div class="container">
+            <div class="menu-res" id="responsive">
+                <span class="resTab" id="menu-dash"><a href="./dashboard.html">Dashboard</a></span><br>
+                <span class="resTab"><a href="./index.html">Projects</a></span><br>
+                <span class="user-display">Welcome, <i class="fa fa-user"></i> User</span>
+                <button id="logout-btn-res" type="submit" value="Logout"></button>
+            </div>
             <div class="section-one flex-box">
                 <div class="project-card" id="projectCard">
                     <div class="top-sec flex-box" id="top-sec">

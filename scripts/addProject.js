@@ -135,7 +135,13 @@ function getDays(date1 , date2) {
     return Difference_In_Days;
 }
 
+function menuDisplay() {
+    const resMenu = document.getElementById("responsive");
+    const resIcon = document.getElementById("menuHam");
+    resIcon.addEventListener("click" , function(){
+        resMenu.classList.toggle("show");
+    })
+}
 
-
-
+menuDisplay();
             
